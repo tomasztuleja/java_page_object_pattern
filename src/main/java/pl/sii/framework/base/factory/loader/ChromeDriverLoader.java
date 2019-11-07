@@ -11,6 +11,4 @@ public enum ChromeDriverLoader {
 
     public static void load() {
     }
-
-    ;
 }

@@ -70,7 +70,6 @@ public class SignInPage extends Page {
     @Step("User checks if alert message is displayed")
     public boolean isAlertMessageDisplayed() {
         log.info("Check if alert message displayed");
-        return webDriverWait.until(webDriver -> alertMessage.isDisplayed())
-                .booleanValue();
+        return webDriverWait.until(webDriver -> alertMessage.isDisplayed());
     }
 }
