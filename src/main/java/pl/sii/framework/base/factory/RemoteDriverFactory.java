@@ -53,20 +53,17 @@ public class RemoteDriverFactory implements IDriverFactory {
         }
         switch (driverType) {
             case CHROME:
-                WebDriverManager.chromedriver().setup();
                 desiredCapabilities = new DesiredCapabilities();
                 desiredCapabilities.setCapability(ChromeOptions.CAPABILITY, BrowserOptionsFactory.getOptions());
                 driver = new RemoteWebDriver(gridHubUrl, desiredCapabilities);
                 break;
             case FIREFOX:
-                WebDriverManager.firefoxdriver().setup();
                 desiredCapabilities = new DesiredCapabilities();
                 desiredCapabilities.setCapability(FirefoxOptions.FIREFOX_OPTIONS, BrowserOptionsFactory.getOptions());
                 driver = new RemoteWebDriver(gridHubUrl, desiredCapabilities);
                 break;
             default:
                 log.warn("Browser not provided, using default one");
-                WebDriverManager.chromedriver().setup();
                 desiredCapabilities = new DesiredCapabilities();
                 desiredCapabilities.setCapability(ChromeOptions.CAPABILITY, BrowserOptionsFactory.getOptions());
                 driver = new RemoteWebDriver(gridHubUrl, desiredCapabilities);

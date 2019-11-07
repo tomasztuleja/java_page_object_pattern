@@ -1,5 +1,6 @@
 
 .allure/
+allure-results/
 target/
 .idea/
 *.class
